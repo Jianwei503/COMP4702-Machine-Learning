@@ -1,0 +1,27 @@
+c is the slack variable/penalty factor in soft margin SVM, trading off scheme complexity
+When c tends to be very large, it means that the classification is strict and there can be no errors, which is the hard margin
+When c tends to be very small, it means that there can be greater tolerance for errors
+
+sigma: spread value / variance
+when The boundary and margins found by the Gaussian kernel,
+We get smoother boundaries with larger spreads
+
+Gaussian kernel
+defines a spherical kernel
+
+
+My training data is sonar, this is my statistics data
+
+The reason I chose 2 is
+the Data is not linearly separable,
+the performance of the quadratic polynomial kernel is higher than that of the linear kernel for this data
+I also tried other higher exponents, exponents 2, 3, 4 have the same performance, and the performance gradually decreases from 5. ---overfitting
+
+
+conclution
+For this data set:
+Regardless of whether the percentage split test or the cross-validation test is used, the performance of the model using the RBF kernel after training is better than that of the model using the polynomial kernel.
+
+The performance of the percentage split test is overall better than that of the cross-validation test.
+
+With the increase of c, the performance improves, and finally the performance is stable.

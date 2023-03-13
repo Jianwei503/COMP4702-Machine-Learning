@@ -1,0 +1,14 @@
+input data to present to the network: train_X
+target data defining desired network output: lables
+Samples are Matrix rows
+
+Number of Hidden Neurons: 10
+
+Train using scaled conjugate gradient backpropagation(trainscg)
+Training automatically stops when generalization stops improving, as indicated by an increase in the cross-entropy error of the validation samples.
+
+Training multiple times will generate different results due to different initial conditons and sampling.
+
+Minimizing Cross-Entropy results in good classification.
+Lower values are better. Zero means no error.
+

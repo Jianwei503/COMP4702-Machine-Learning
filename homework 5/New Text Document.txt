@@ -1,0 +1,48 @@
+load C:\Users\s4555540\Downloads\cifar10_data_batch_1.mat
+
+ X = data(:,[1 4 5 8])
+
+X = cast(X,'single')
+
+[coeff,score,latent] = pca(X,'Centered',0)
+
+PC1 = score(:,1)
+PC2 = score(:,2)
+scatter(PC1,PC2)
+
+
+
+
+import data iris.txt in Numeric Matrix type
+x = iris(:,1:2)
+
+m = mean(x)
+m1 = mean(x(1:50,:))
+m2 = mean(x(51:100,:))
+m3 = mean(x(101:150,:))
+Sb = 50*((m1-m)'*(m1-m)) + 50*((m2-m)'*(m2-m)) + 50*((m3-m)'*(m3-m))
+
+Sb =
+
+   63.2121  -19.5340
+  -19.5340   10.9776
+
+Sb = 50*((m1-m)'*(m1-m)) + 50*((m2-m)'*(m2-m)) + 50*((m3-m)'*(m3-m))
+S1 = cov(x(1:50,:))
+S2 = cov(x(51:100,:))
+S3 = cov(x(101:150,:))
+SW = S1+S2+S3
+[v,d]=eig(inv(SW)*Sb)
+
+W = v(:,1)
+Sbafter = W'*Sb*W
+
+Sbafter =
+
+   49.6847
+
+
+
+The scatter plots show that when both features are present, the classes are well-separated, despite very high correlation between the features.
+
+The means of the class-conditional distributions are not captured by the covariance/correlation.
